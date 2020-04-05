@@ -1,0 +1,326 @@
+body{
+  font-weight:300;
+  font-size:.95rem;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+.app-wrap{
+  min-height:100vh;
+}
+footer{
+  /* transform:translateY(-100%) */
+}
+.container-fluid{
+  max-width:1200px;
+}
+.container-sm{
+  max-width:900px;
+}
+.container-fluid.w-100{
+  max-width:100%;
+}
+@media screen and (max-width:1200px) {
+  .container-fluid{
+    padding:0 30px;
+  }
+}
+@media screen and (max-width:600px) {
+  .container-fluid{
+    padding:0 15px;
+  }
+}
+.d-absolute{
+  position: absolute;
+}
+strong{
+  font-weight:600;
+}
+.text-primary{
+  color:#ff3300 !important
+}
+.text-extra-large{
+  font-size:2.5rem;
+}
+.text-very-large{
+  font-size:1.3rem;
+}
+.text-large{
+  font-size:1.1rem;
+  line-height:1.5;
+}
+.text-medium{
+  font-size:.8rem;
+  line-height:1.9;
+}
+.tighter-spacing{
+  line-height:1.5;
+}
+.text-small{
+  font-size:.65rem;
+  font-weight:400;
+  /* padding:3px; */
+}
+.text-serif{
+  font-family: 'Sura', serif;
+}
+.text-sans-serif{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+.text-strong{
+  font-weight:600;
+}
+.text-thin{
+  font-weight:100 !important;
+}
+.text-lighter{
+  color:#ababab;
+}
+.inline-radio{
+  line-height: 1.8;
+}
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before, .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #717579 !important;
+}
+.bg-primary{
+  background-color:#ff3300 !important;
+}
+.btn-primary{
+  background-color:#ff3300 !important;
+  border-color:#ff3300;
+}
+.btn-primary:active, .btn-primary:hover, .btn-primary:focus{
+  outline:none !important;
+  border-color:#ff3300;
+}
+.btn-sm{
+  font-size: .7rem;
+}
+.shadow-md{
+  box-shadow: 0 0.125rem 1.25rem rgba(0, 0, 0, 0.095) !important
+}
+hr.primary{
+}
+a{
+  color:#333;
+}
+a:hover{
+  color:#333 !important;
+}
+a.text-primary, a.text-primary:hover, .text-primary a:hover, a.text-primary:focus{
+  color:#ff3300 !important;
+  outline: none;
+}
+table tr td:nth-child(2){
+  /* width:100%; */
+}
+table.ingredients-table tr td:nth-child(3){
+  width:100%;
+}
+.table-sm{
+  font-size:.8rem;
+}
+.table-no-top-rule tbody tr:first-child td{
+  border-top:0;
+}
+.text-bold{
+  font-weight:600;
+  letter-spacing: -.5;
+}
+.text-caps{
+  text-transform: uppercase;
+}
+.logo, h1, h2, h3, h4, h5, h6{
+  font-family: 'Sura', serif;
+  letter-spacing:-.5px;
+}
+h2 a{
+  color:#333;
+}
+h2{
+  font-size:1.9rem;
+}
+h3{
+  font-size:1.6rem;
+}
+h4{
+  font-size:1.5rem;
+}
+h5{
+  font-size:1.4rem;
+}
+h6{
+  font-size:1.3rem;
+}
+.rounded-corner{
+  border-radius:8px;
+}
+.cursor{
+  cursor:pointer;
+}
+.cursor-grab{
+  cursor:grab;
+}
+.no-select{
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.logo .material-design-icon{
+  font-size:1.3rem;
+  margin-right:5px;
+}
+.logo{
+  line-height:1.2;
+  font-size:1.75rem
+}
+@media screen and (max-width:600px){
+  .logo{
+    font-size:1.2rem;
+  }
+  .logo .material-design-icon{
+    font-size:.8rem;
+  }
+}
+.nav-bar > div{
+  font-weight:600;
+  font-size:.9rem;
+}
+.card{
+  border:0;
+  box-shadow:0 0 10px rgba(0, 0, 0, .05);
+}
+.small-card .card-body{
+  padding:1.25rem;
+}
+.small-card h4.card-title{
+  font-size:1.2rem;
+  margin-bottom:0;
+}
+.cover-card{
+  border-radius:0;
+  border:0;
+}
+.card-body{
+  padding:2rem;
+}
+.card .card-body:last-child{
+  border-bottom:0 !important;
+}
+.bg-black{
+  background-color:black;
+}
+.cover{
+  height:100vh;
+  max-height:600px;
+  position: relative;
+  background-size:cover;
+  background-position: 50% 75%;
+}
+.recipe-dropdown-wrapper{
+  line-height:2;
+}
+@media screen and (max-width:767px) {
+  .cover{
+    height:50vh;
+  }
+}
+.cover-card{
+  max-width:300px;
+  position: absolute;
+  bottom:10%;
+  left:10%;
+  padding:20px 10px;
+}
+@media screen and (max-width:600px){
+  #lead-cover{
+    background-size:cover;
+  }
+  .cover-card{
+    max-width:100%;
+    position: absolute;
+    bottom:0%;
+    left:0%;
+    padding:20px 10px;
+  }
+}
+.recipes-card .decagram{
+  top:-1.8rem;
+  left:15px;
+  text-shadow:0px 0px 4px rgba(0,0,0,.15)
+}
+.recipes-card:hover{
+  box-shadow:0px 0px 4px rgba(0,0,0,.15)
+}
+.viz .domain{
+  opacity:0;
+}
+.viz .no-touch{
+  display:none;
+}
+@media screen and (max-width:550px){
+  .viz .no-touch{
+    display:block;
+    touch-action:none;
+  }
+}
+.legend-item, .legend-label{
+  font-size:12px;
+  display:inline-block;
+  margin-right:5px;
+}
+.legend-box{
+  display:inline-block;
+  width:8px;
+  height:8px;
+  margin-right:0px;
+}
+.reset-button{
+  bottom:10px;
+  left:10px;
+  z-index: 99;
+}
+.timer{
+  position: fixed;
+  bottom:0;
+  background:#e9e9e9;
+  right:40px;
+  z-index: 99;
+  max-width:225px;
+  min-width:180px;
+  transform:translateY(100%);
+  transition: transform linear .15s;
+}
+.timer nav{
+  font-size:.7rem;
+  text-shadow:1px 1px 1px rgba(0,0,0,.1)
+}
+.timer nav .nav-title{
+  /* max-width:calc(100% - 100px);
+  overflow: hidden; */
+}
+.timer nav .material-design-icon{
+  font-size:.7rem;
+}
+.timer.show{
+  transform:translateY(0);
+}
+.timer.minimize{
+  transform:translateY(calc(100% - 30px))
+}
+.big-num{
+  font-family: 'Sura', serif;
+  letter-spacing:-.5px;
+  font-size:2rem;
+  line-height: 0;
+}
+.big-num span{
+  font-size:1.2rem;
+}
+.timer p{
+  font-size:.9rem;
+  margin-top:15px;
+  margin-bottom:0;
+}
