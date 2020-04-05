@@ -1,5 +1,13 @@
 node_modules
 .env
+client/node_modules/
+client/dist/
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+client/test/unit/coverage
+client/test/e2e/reports
+client/selenium-debug.log
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
