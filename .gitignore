@@ -9,6 +9,13 @@ client/test/unit/coverage
 client/test/e2e/reports
 client/selenium-debug.log
 
+# Editor directories and files
+client/.idea
+client/*.suo
+client/*.ntvs*
+client/*.njsproj
+client/*.sln
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
