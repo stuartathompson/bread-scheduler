@@ -14,9 +14,21 @@ I was tired of most recipe websites, which just list a bunch of ingredients and 
 
 5. Nice photos: All photos were taken by me
 
+## Starting the project
+
+1. Download and install MongoDB (see [instructions here](https://code.tutsplus.com/articles/an-introduction-to-mongoose-for-mongodb-and-nodejs--cms-29527))
+
+2. Clone this repo
+
+3. Run `mongod` to start Mongo
+
+4. `cd` into `client` folder and run `npm start`
+
+5. `cd` into `server`  folder and run `npm start`
+
 ## Stack
 
-This is also a test case for new technology I'm interested in learning. Namely, this runs on a MEVN stack, using Mongoose, Express, Vue.js and Node.
+This was really just a test case for technology I'm interested in learning. Namely, this runs on a MEVN stack, using Mongoose, Express, Vue.js and Node.
 
 This is the second app I've now built using this stack. It was lots of fun and helped me learn a lot about full-stack development.
 
