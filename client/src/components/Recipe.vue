@@ -52,14 +52,14 @@
           <template v-if="recipe && recipe.ingredients && recipe.ingredients.length > 0" v-for="ingredient of recipe.ingredients">
             <span  class="text-medium text-bold" v-if="recipe.ingredients && recipe.ingredients.length > 1">{{ ingredient.item }}</span>
             <b-table small thead-class="d-none" :items="ingredient.ingredients" :fields="ingredientTableFields" class="table-no-top-rule">
-              <template slot="amount" slot-scope="data">
+              <template v-slot:cell(amount)="data">
                 <s class="text-lighter" v-if="preferences.half">{{ convertMeasurement(data.item) }}</s>
                 <template v-else>{{ convertMeasurement(data.item) }}</template>
               </template>
-              <template v-if="preferences.half" slot="halved" slot-scope="data">
+              <template v-if="preferences.half" v-slot:cell(halved)="data">
                 {{ half(data.item) }}
               </template>
-              <template slot="percentages" slot-scope="data">
+              <template v-slot:cell(percentages)="data">
                 {{ getPercentages(ingredient, data.item) }}
               </template>
             </b-table>
@@ -165,13 +165,13 @@
               <div v-show="view === 'scheduler'" id="scheduler" class="pt-2 cursor-grab no-select viz">&nbsp;</div>
               <b-col v-if="view === 'agenda'">
                 <b-table thead-class="d-none" :items="recipe.steps" :fields="agendaFields" class="w-100 table-no-top-rule">
-                  <template slot="category" slot-scope="data">
+                  <template v-slot:cell(category)="data">
                     {{ data.item.category }}
                   </template>
-                  <template slot="day" slot-scope="data">
+                  <template v-slot:cell(day)="data">
                     {{ day(data.item) }}
                   </template>
-                  <template slot="startTime" slot-scope="data">
+                  <template v-slot:cell(startTime)="data">
                     {{ data.item.startTime | time }}
                   </template>
                 </b-table>
@@ -204,14 +204,14 @@
                     For this step:
                   </div>
                   <b-table thead-class="d-none" small v-if="step.ingredients && step.ingredients.length > 0" :fields="ingredientTableFields" :items="step.ingredients" class="ingredients-table">
-                    <template slot="amount" slot-scope="data">
+                    <template v-slot:cell(amount)="data">
                       {{ convertMeasurement(data.item) }}
                     </template>
 
-                    <template v-if="preferences.half" slot="halved" slot-scope="data">
+                    <template v-if="preferences.half" v-slot:cell(halved)="data">
                       {{ half(data.item) }}
                     </template>
-                    <template slot="amount"slot-scope="data">
+                    <template v-slot:cell(amount)="data">
                       <s class="text-lighter" v-if="preferences.half">{{ convertMeasurement(data.item) }}</s>
                       <template v-else>{{ convertMeasurement(data.item) }}</template>
                     </template>
@@ -264,13 +264,12 @@
 
       </b-row> -->
     </b-container>
+    <span style="opacity:0">{{ startDate }}</span>
   </div>
 </template>
 
 <script>
 // import RecordsService from '@/services/RecordsService'
-import Viz from '@/components/Viz'
-import Viz2 from '@/components/Viz2'
 import moment from 'moment'
 const d3 = require('d3')
 export default {
@@ -393,8 +392,6 @@ export default {
     }
   },
   components: {
-    Viz,
-    Viz2
   },
   created () {
     // console.log('created recipe')
@@ -403,7 +400,8 @@ export default {
   },
   mounted () {
     // console.log('mounted recipe')
-    this.getRecipe().then(this.makeViz)
+    this.getRecipe()
+      .then(this.makeViz)
   },
   updated () {
     // console.log('updated recipe')
@@ -425,9 +423,9 @@ export default {
   },
   computed: {
     isBread: function () {
-      return this.$store.state.recipe.ingredients.filter(d => {
+      return this.$store.state.recipe.ingredients ? this.$store.state.recipe.ingredients.filter(d => {
         return d.item.match(/bread/gi)
-      }).length > 0
+      }).length > 0 : true
     },
     userRating: function () {
       var recipe = JSON.parse(window.localStorage.getItem(this.recipe._id))
@@ -498,7 +496,7 @@ export default {
 
       // Default to the ideal start time
       this.skedStartDate = this.dateDefaults['start_ideal']
-      console.log('diff', moment().startOf('day').add(this.$store.state.recipe.recommendedTimes[0].startTime, 'h').diff(moment(), 'm'), this.skedStartDate)
+
       // Clear content
       document.getElementById('scheduler').innerHTML = ''
 
@@ -855,6 +853,7 @@ export default {
           .attr('transform', 'translate(0, 0)')
         svg.selectAll('rect.step-min-rect')
           .attr('fill', primary)
+        // console.log('end')
         refitChart()
       }
 
