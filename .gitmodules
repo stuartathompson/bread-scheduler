@@ -1,3 +1,6 @@
 [submodule "server"]
 	path = server
 	url = https://github.com/stuartathompson/bread-scheduler-server
+[submodule "client"]
+	path = client
+	url = git@github.com:stuartathompson/bread-scheduler-client.git
